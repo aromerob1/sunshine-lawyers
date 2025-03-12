@@ -3,18 +3,35 @@
 
 @theme {
     --font-poppins: "Poppins", "sans-serif";
-    --font-playfair: "Playfair", "sans-serif";
+    --font-playfair: "Playfair", "serif";
 
+    --font-weight-regular-playfair: 400;
+    --font-weight-bold-playfair: 700;
+
+    --font-weight-regular-poppins: 400;
+    --font-weight-bold-poppins: 700;
+
+    --text-h1: 32px;
+    --text-h2: 24px;
+    --text-h3: 20px;
+    --text-h4: 18px;
+
+    --text-body: 16px;
+    --text-small: 14px;
+    --text-tiny: 12px;
 
     --breakpoint-3xl: 1920px;
 
-    --color-yellow: #FFA500;
-    --color-orange: #F3671A;
-    --color-blue: #0077CC;
-    --color-dark-blue: #00C1FF;
-    --color-dark-purple: #1C0D31;
-    --color-gray: #BFBFBF;
-    --color-dark-gray: #989898;
+    --color-theme-yellow: #FFA500;
+    --color-theme-orange: #F3671A;
+    --color-theme-blue: #0077CC;
+    --color-theme-dark-blue: #00C1FF;
+    --color-theme-dark-purple: #1C0D31;
+    --color-theme-gray: #BFBFBF;
+    --color-theme-dark-gray: #989898;
+    --color-theme-footer-gray: #3C3C3C;
+
+    --radius-standard: 2rem;
     
     --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
     --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
