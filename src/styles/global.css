@@ -7,8 +7,12 @@
 
     --font-weight-regular-playfair: 400;
     --font-weight-bold-playfair: 700;
+    --font-weight-black-playfair: 900;
 
+    --font-weight-light-poppins: 300;
     --font-weight-regular-poppins: 400;
+    --font-weight-medium-poppins: 500;
+    --font-weight-semibold-poppins: 600;
     --font-weight-bold-poppins: 700;
 
     --text-h1: 32px;
@@ -30,9 +34,11 @@
     --color-theme-gray: #BFBFBF;
     --color-theme-dark-gray: #989898;
     --color-theme-footer-gray: #3C3C3C;
+    --color-theme-alt-gray: #5F5F5F;
 
     --radius-standard: 2rem;
     
     --ease-fluid: cubic-bezier(0.3, 0, 0, 1);
     --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
   }
+  

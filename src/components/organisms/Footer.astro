@@ -1,5 +1,5 @@
 ---
-
+import { Image } from 'astro:assets';
 ---
 
 <footer
@@ -15,9 +15,9 @@
   <div class="flex flex-col items-center justify-end">
     <span>Sigue nuestras noticias</span>
     <div class="flex">
-      <img src="assets/icons/Facebook.svg" />
-      <img src="assets/icons/Instagram.svg" />
-      <img src="assets/icons/TikTok.svg" />
+      <Image src="/assets/icons/Facebook.svg" alt="Facebook icon" width={45} height={45} />
+      <Image src="/assets/icons/Instagram.svg" alt="Instagram icon" width={45} height={45} />
+      <Image src="/assets/icons/TikTok.svg" alt="Tiktok icon" width={45} height={45} />
     </div>
   </div>
 </footer>

@@ -1,13 +1,27 @@
 ---
-
+import { Image } from 'astro:assets';
 ---
 
 <nav class="navbar">
   <div class="flex justify-between items-center p-5">
-    <img src="/assets/logo.svg" alt="Logo" class="logo" />
+    <Image src="/assets/logo.svg" alt="Logo" width={138} height={53} />
     <div>
-      <button><img src="/assets/icons/EarthGlobe.svg" /></button>
-      <button><img src="/assets/icons/BurguerMenu.svg" /></button>
+      <button
+        ><Image
+          src="/assets/icons/EarthGlobe.svg"
+          alt="Language icon"
+          width={44}
+          height={44}
+        /></button
+      >
+      <button
+        ><Image
+          src="/assets/icons/BurguerMenu.svg"
+          alt="Burguer menu icon"
+          width={48}
+          height={48}
+        /></button
+      >
     </div>
   </div>
 </nav>

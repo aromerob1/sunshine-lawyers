@@ -1,10 +1,13 @@
 ---
-const { bgColor, textColor, size, content, iconPath, iconAlt } = Astro.props;
+import { Image } from 'astro:assets';
+
+const { bgColor, textColor, size, text, iconPath, iconAlt, iconWidth, iconHeight, className } =
+  Astro.props;
 ---
 
 <button
-  class=`flex items-center justify-center rounded-standard px-[30px] py-[5px] font-poppins text-tiny font-bold ${bgColor || ""} ${textColor || ""} ${size || ""} `
+  class=`flex items-center rounded-standard px-[30px] py-[5px] font-poppins text-tiny font-bold ${bgColor || ""} ${textColor || ""} ${size || ""} ${className || ""}`
 >
-  {iconPath && <img src={iconPath} alt={iconAlt} />}
-  {content}
+  {iconPath && <Image src={iconPath} alt={iconAlt} width={iconWidth} height={iconHeight} />}
+  {text}
 </button>

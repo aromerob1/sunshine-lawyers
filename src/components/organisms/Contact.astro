@@ -1,0 +1,27 @@
+---
+import Button from '../atoms/Button.astro';
+---
+
+<section
+  class="flex flex-col bg-theme-dark-purple p-8 font-poppins text-white font-bold-poppins text-center gap-8"
+>
+  <h1 class="text-h1">Contáctanos</h1>
+  <p class="text-small">Cuéntanos más sobre tu caso, estamos aquí para ayudarte</p>
+  <div class="flex flex-col gap-[0.8rem] w-full">
+    <Button
+      text="(833) 845223651"
+      bgColor="bg-theme-orange"
+      iconPath="/assets/icons/Phone.svg"
+      iconAlt="Phone icon"
+      iconWidth={23}
+      iconHeight={23}
+      className="justify-center"
+    />
+    <Button
+      text="Contact Us"
+      bgColor="bg-white/[66%]"
+      textColor="text-black"
+      className="justify-center"
+    />
+  </div>
+</section>

@@ -5,7 +5,7 @@ import Button from '../atoms/Button.astro';
 <section
   class="flex flex-col items-center bg-[url('/assets/images/HeroBg.webp')] bg-cover bg-center text-white text-center p-10 gap-[5rem]"
 >
-  <div>
+  <div class="mt-[2.4rem]">
     <h2 class="font-playfair font-weight-bold text-h2">¿Sufriste un accidente de auto?</h2>
     <h2 class="font-playfair font-weight-bold text-h2">Nosotros nos encargamos</h2>
   </div>
@@ -13,12 +13,20 @@ import Button from '../atoms/Button.astro';
     <p class="font-poppins font-bold-poppins text-body">Tu consulta es 100% gratis</p>
     <div class="flex flex-col gap-[0.8rem] w-full">
       <Button
-        content="(833) 845223651"
+        text="(833) 845223651"
         bgColor="bg-theme-orange"
-        iconPath="assets/icons/Phone.svg"
+        iconPath="/assets/icons/Phone.svg"
         iconAlt="Phone icon"
+        iconWidth={23}
+        iconHeight={23}
+        className="justify-center"
       />
-      <Button content="Contact Us" bgColor="bg-white/[66%]" textColor="text-black" />
+      <Button
+        text="Contact Us"
+        bgColor="bg-white/[66%]"
+        textColor="text-black"
+        className="justify-center"
+      />
     </div>
   </div>
 </section>

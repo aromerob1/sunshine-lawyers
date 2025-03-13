@@ -1,0 +1,92 @@
+---
+import { Image } from 'astro:assets';
+import Button from '../atoms/Button.astro';
+import ProgressIndicator from '../atoms/ProgressIndicator.astro';
+---
+
+<form
+  class="bg-white/[22%] backdrop-blur-xl font-poppins px-[1.2rem] py-[1.5rem] rounded-standard flex flex-col gap-[1.5rem] items-center w-80"
+>
+  <div class="flex justify-start w-full">
+    <Image
+      src="/assets/icons/ChevronLeft.svg"
+      alt="Progress indicator background"
+      width={39}
+      height={39}
+      class="flex justify-start"
+    />
+  </div>
+  <ProgressIndicator />
+  <div>
+    <p class="text-body font-medium-poppins">¿Qué pasó en tu accidente?</p>
+    <p class="text-body font-medium-poppins">Cuéntanos y te ayudamos.</p>
+  </div>
+  <div class="flex flex-col gap-[1rem] w-full">
+    <Button
+      bgColor="bg-theme-gray"
+      textColor="text-black"
+      text="Accidente automovilístico"
+      iconPath="/assets/icons/CrashedCar.svg"
+      iconAlt="Crashed car icon"
+      iconWidth={26}
+      iconHeight={26}
+      size="w-full"
+      className="gap-[0.6rem]"
+    />
+    <Button
+      bgColor="bg-theme-gray"
+      textColor="text-black"
+      text="Accidente de camión"
+      iconPath="/assets/icons/FireTruck.svg"
+      iconAlt="Truck icon"
+      iconWidth={26}
+      iconHeight={26}
+      size="w-full"
+      className="gap-[0.6rem]"
+    />
+    <Button
+      bgColor="bg-theme-gray"
+      textColor="text-black"
+      text="Accidente de motocicleta"
+      iconPath="/assets/icons/DirtBike.svg"
+      iconAlt="Motorcycle icon"
+      iconWidth={26}
+      iconHeight={26}
+      size="w-full"
+      className="gap-[0.6rem]"
+    />
+    <Button
+      bgColor="bg-theme-gray"
+      textColor="text-black"
+      text="Resbalón o caída"
+      iconPath="/assets/icons/WatchYourStep.svg"
+      iconAlt="Slip icon"
+      iconWidth={26}
+      iconHeight={26}
+      size="w-full"
+      className="gap-[0.6rem]"
+    />
+    <Button
+      bgColor="bg-theme-gray"
+      textColor="text-black"
+      text="Negligencia de seguridad"
+      iconPath="/assets/icons/PublicSafety.svg"
+      iconAlt="Security icon"
+      iconWidth={26}
+      iconHeight={26}
+      size="w-full"
+      className="gap-[0.6rem]"
+    />
+    <Button
+      bgColor="bg-theme-gray"
+      textColor="text-black"
+      text="Ataque de perro"
+      iconPath="/assets/icons/AngryDog.svg"
+      iconAlt="Dog icon"
+      iconWidth={26}
+      iconHeight={26}
+      size="w-full"
+      className="gap-[0.6rem]"
+    />
+  </div>
+</form>
