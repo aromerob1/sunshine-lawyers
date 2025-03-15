@@ -1,9 +1,92 @@
 ---
-
+import { Image } from 'astro:assets';
 ---
 
-<section>
-  <h1 class="text-h1 font-playfair font-regular-playfair text-center my-[3.1rem]">
-    Tu caso, resulto en 4 pasos
-  </h1>
+<section class="h-[600vh]">
+  <div class="sticky top-[5.8rem]">
+    <div class="bg-white py-[3.1rem]">
+      <h1 class="text-h1 font-playfair font-regular-playfair text-center">
+        Tu caso, resuelto en 4 pasos
+      </h1>
+    </div>
+    <div id="steps-container" class="relative h-[50vh]">
+      <div
+        class="absolute inset-0 flex flex-col items-center text-center font-poppins opacity-100 transition-opacity duration-500 h-fit"
+      >
+        <h2 class="text-h2 font-medium-poppins">Paso 1</h2>
+        <p class="text-body font-regular-poppins">Cuéntanos qué pasó en tu accidente</p>
+        <Image src="/assets/images/Step1.webp" alt="Step 1 image" width={400} height={400} />
+      </div>
+      <div
+        class="absolute inset-0 flex flex-col items-center text-center font-poppins opacity-0 transition-opacity duration-500 h-fit"
+      >
+        <h2 class="text-h2 font-medium-poppins">Paso 2</h2>
+        <p class="text-body font-regular-poppins">Nosotros nos encargamos de todo</p>
+        <Image src="/assets/images/Step2.webp" alt="Step 2 image" width={400} height={400} />
+      </div>
+      <div
+        class="absolute inset-0 flex flex-col items-center text-center font-poppins opacity-0 transition-opacity duration-500 h-fit"
+      >
+        <h2 class="text-h2 font-medium-poppins">Paso 3</h2>
+        <p class="text-body font-regular-poppins">Recibe tu compensación</p>
+        <Image src="/assets/images/Step3.webp" alt="Step 3 image" width={400} height={400} />
+      </div>
+      <div
+        class="absolute inset-0 flex flex-col items-center text-center font-poppins opacity-0 transition-opacity duration-500 h-fit"
+      >
+        <h2 class="text-h2 font-medium-poppins">Paso 4</h2>
+        <p class="text-body font-regular-poppins">Disfruta de tu compensación</p>
+        <Image src="/assets/images/Step4.webp" alt="Step 4 image" width={400} height={400} />
+      </div>
+    </div>
+  </div>
+  <!-- A tall container to hold 4 triggers at 25% intervals -->
+  <div class="h-full">
+    {
+      Array.from({ length: 4 }).map((_, i) => (
+        <div id={`trigger-${i}`} class="mt-[100vh] min-h-[0.1px]" />
+      ))
+    }
+  </div>
 </section>
+
+<script>
+  const stepDivs = document.querySelectorAll('#steps-container > div');
+  const triggers: any = [];
+
+  // Gather references to each trigger
+  for (let i = 0; i < 4; i++) {
+    triggers.push(document.querySelector(`#trigger-${i}`));
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Figure out which trigger index is in view
+          const idx = triggers.indexOf(entry.target);
+          console.log('idx', idx);
+          console.log(stepDivs);
+          // Show stepDivs[idx], hide the others
+          stepDivs.forEach((div, stepIndex) => {
+            console.log('stepIndex', stepIndex);
+            console.log('stepIndex === idx', stepIndex === idx);
+            if (stepIndex === idx) {
+              console.log('div', div);
+              div.classList.remove('opacity-0');
+              div.classList.add('opacity-100');
+            } else {
+              console.log('div', div);
+              div.classList.remove('opacity-100');
+              div.classList.add('opacity-0');
+            }
+          });
+        }
+      });
+    },
+    { threshold: 0.5 }
+  ); // 50% in view
+
+  // Observe each trigger
+  triggers.forEach((trigger: any) => observer.observe(trigger));
+</script>

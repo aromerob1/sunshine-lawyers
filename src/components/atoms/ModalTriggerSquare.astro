@@ -4,7 +4,7 @@ const { color, text } = Astro.props;
 ---
 
 <div
-  class=`flex flex-col items-center justify-center text-center w-[12.2rem] h-[12.7rem] ${color} text-white font-poppins`
+  class=`flex flex-col items-center justify-center text-center w-full h-[12.7rem] ${color} text-white font-poppins`
 >
   <h3 class="text-h3 font-bold-poppins">{text}</h3>
   <Image src="/assets/icons/Cancel.svg" alt="More information icon" width={35} height={35} />
