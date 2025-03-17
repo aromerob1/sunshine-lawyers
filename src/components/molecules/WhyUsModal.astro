@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<div
+  id="why-us-modal"
+  class="fixed inset-0 z-3 bg-[#00021A]/[57%] backdrop-blur-lg hidden items-center justify-center px-8"
+>
+  <div class="relative flex flex-col bg-white rounded-standard overflow-hidden">
+    <div class="w-full">
+      <img
+        id="whyUsModalImage"
+        src=""
+        alt="Why Us"
+        class="object-cover object-center w-full h-[8.7rem]"
+      />
+    </div>
+    <Image
+      src="/assets/icons/Cancel.svg"
+      alt="Close modal"
+      width={49.5}
+      height={49.5}
+      class="absolute top-1 right-1 cursor-pointer -rotate-45"
+      onclick="window.dispatchEvent(new Event('closeWhyUsModal'))"
+    />
+    <div class="p-6">
+      <h2 id="whyUsModalTitle" class="text-h2 font-playfair font-black-playfair"></h2>
+      <p id="whyUsModalText" class="text-small font-poppins font-regular-poppins"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    window?.addEventListener('openWhyUsModal', (evt) => {
+      const { title, text, imagePath } = (
+        evt as CustomEvent<{ title: string; text: string; imagePath: string }>
+      ).detail;
+      const titleElement = document.getElementById('whyUsModalTitle');
+      if (titleElement) {
+        titleElement.innerText = title;
+      }
+      const bodyElement = document.getElementById('whyUsModalText');
+      if (bodyElement) {
+        bodyElement.innerText = text;
+      }
+      const imageElement = document.getElementById('whyUsModalImage');
+      if (imageElement) {
+        console.log(imagePath);
+        imageElement.setAttribute('src', imagePath);
+      }
+
+      const modal = document.getElementById('why-us-modal');
+      modal?.classList.remove('hidden');
+      modal?.classList.add('flex');
+    });
+
+    window.addEventListener('closeWhyUsModal', () => {
+      const modal = document.getElementById('why-us-modal');
+      modal?.classList.remove('flex');
+      modal?.classList.add('hidden');
+    });
+  });
+</script>

@@ -1,12 +1,20 @@
 ---
 import { Image } from 'astro:assets';
-const { color, text } = Astro.props;
+const { color, title, modalText } = Astro.props;
 ---
 
 <div
+  id="modal-container"
   class=`relative flex flex-col items-center justify-center text-center w-full h-[12.7rem] ${color} text-white font-poppins p-2`
+  onclick={`window.dispatchEvent(new CustomEvent('openWhyUsModal', {
+  detail: {
+    title: '${title}',
+    text: '${modalText}',
+    imagePath: 'assets/images/PersonalizedAtentionModal.webp'
+    }
+  }))`}
 >
-  <h3 class="text-h3 font-bold-poppins">{text}</h3>
+  <h3 class="text-h3 font-bold-poppins">{title}</h3>
   <Image
     src="/assets/icons/Cancel.svg"
     alt="More information icon"

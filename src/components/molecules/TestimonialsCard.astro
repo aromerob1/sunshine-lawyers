@@ -9,7 +9,7 @@ import Testimonial from '../atoms/Testimonial.astro';
     <h1 class="font-regular-playfair">Tu confianza</h1>
     <h1 class="font-bold-playfair">Nos impulsa</h1>
   </div>
-  <div class="overflow-y-scroll">
+  <div id="auto-scroll-container" class="flex flex-col overflow-y-scroll gap-4 hide-scrollbar">
     <Testimonial />
     <Testimonial />
     <Testimonial />
@@ -18,3 +18,27 @@ import Testimonial from '../atoms/Testimonial.astro';
     <Testimonial />
   </div>
 </div>
+
+<script>
+  const container = document.getElementById('auto-scroll-container');
+  let scrollPos = 0;
+  let scrollUp = false;
+
+  setInterval(() => {
+    if (container) {
+      const maxScroll = container.scrollHeight - container.clientHeight;
+      if (scrollPos >= maxScroll || scrollUp) {
+        if (scrollPos <= 0) {
+          scrollUp = false;
+        } else {
+          scrollUp = true;
+        }
+        scrollPos -= 0.1;
+        container.scrollTo({ top: scrollPos, behavior: 'smooth' });
+      } else {
+        scrollPos += 0.1;
+        container.scrollTo({ top: scrollPos, behavior: 'smooth' });
+      }
+    }
+  }, 1);
+</script>

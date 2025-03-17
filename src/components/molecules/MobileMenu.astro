@@ -1,0 +1,48 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<div class="fixed inset-0 bg-[#040404]/60 w-full z-2">
+  <nav
+    class="fixed right-0 bg-theme-yellow font-poppins font-regular-poppins px-10 py-24 rounded-s-standard h-screen"
+  >
+    <Image
+      src="/assets/icons/MobileMenuClose.svg"
+      alt="Close menu"
+      width={34.7}
+      height={34.7}
+      class="absolute top-6 right-6 cursor-pointer"
+      onclick="window.dispatchEvent(new Event('closeMobileMenu'))"
+    />
+    <ul class="flex flex-col gap-7 text-[1.4rem]">
+      <li>
+        <a href="{{ '/' | url }}" class="flex"
+          >Servicios <Image
+            src="/assets/icons/ExpandArrow.svg"
+            alt="Expand content"
+            width={35}
+            height={35}
+            class="ml-2"
+          /></a
+        >
+        <li><a href="{{ '/about' | url }}">Oficinas</a></li>
+        <li><a href="{{ '/blog' | url }}">Profesionales</a></li>
+        <li><a href="{{ '/contact' | url }}">Logros</a></li>
+        <li>
+          <a href="{{ '/' | url }}" class="flex"
+            >Acerca de nosotros<Image
+              src="/assets/icons/ExpandArrow.svg"
+              alt="Expand content"
+              width={35}
+              height={35}
+              class="ml-2"
+            /></a
+          >
+        </li>
+        <li><a href="{{ '/contact' | url }}">Noticias</a></li>
+        <li><a href="{{ '/contact' | url }}">Contáctanos</a></li>
+        <li><a href="{{ '/contact' | url }}">Preguntas frecuentes</a></li>
+      </li>
+    </ul>
+  </nav>
+</div>
