@@ -4,12 +4,18 @@ const { imgSrc, imgAlt, title, body } = Astro.props;
 ---
 
 <div
-  class="flex flex-col items-center bg-theme-alt-gray font-poppins text-white rounded-standard p-5 w-40"
+  class="relative flex flex-col items-center bg-theme-alt-gray font-poppins text-white rounded-standard p-5 w-40"
 >
   <Image src={imgSrc} alt={imgAlt} width={146} height={134} class="rounded-standard" />
   <div>
     <h3 class="text-body font-semibold-poppins text-center">{title}</h3>
     <p class="text-small font-light-poppins text-center">{body}</p>
   </div>
-  <Image src="/assets/icons/Cancel.svg" alt="More information icon" width={35} height={35} />
+  <Image
+    src="/assets/icons/Cancel.svg"
+    alt="More information icon"
+    width={49.5}
+    height={49.5}
+    class="absolute bottom-2 right-2"
+  />
 </div>
